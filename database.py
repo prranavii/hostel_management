@@ -10,7 +10,7 @@ def add_student(name,admission_no, course,phone, room_no=0):
         insert_query= "INSERT INTO students (name,room_no,admission_no,course,phone) VALUES(%s,%s,%s,%s,%s)"
         student_data=(name,room_no,admission_no,course,phone)
         cursor.execute(insert_query,student_data)
-
+ 
         conn.commit()
 
         return True
@@ -33,15 +33,15 @@ def add_room(room_no,no_of_students,ac):
     
 def view_students(name=None,phone=None,):
     try:
-        select_query=""
+        set_query=""
         if name is not None:
             set_query = f"SELECT * FROM students WHERE name={name}"
         elif phone is not None:
             set_query = f"SELECT * FROM phones WHERE phone={phone}"
         else:
-            select_query = "SELECT * FROM students"
+            set_query = "SELECT * FROM students"
         
-        cursor.execute(select_query)
+        cursor.execute(set_query)
 
         students=cursor.fetchall()
         return students
