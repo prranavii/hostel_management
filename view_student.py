@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from database import  view_students  # Assuming get_student_details is defined
+from database import view_students  # Assuming get_student_details is defined
 
 class ViewStudentWindow:
     def __init__(self, root):
@@ -40,6 +40,9 @@ class ViewStudentWindow:
 
         tk.Label(details_window, text="Student Details", bg="#f0f0f0", font=('Arial', 14)).pack(pady=10)
 
-        for key, value in student_details.items():
-            tk.Label(details_window, text=f"{key}: {value}", bg="#f0f0f0").pack(pady=5)
-        
+        for student in student_details:
+            tk.Label(details_window, text=f"Name: {student[0]}", bg="#f0f0f0").pack(pady=5)
+            tk.Label(details_window, text=f"Room No: {student[1]}", bg="#f0f0f0").pack(pady=5)
+            tk.Label(details_window, text=f"Admission No: {student[2]}", bg="#f0f0f0").pack(pady=5)
+            tk.Label(details_window, text=f"Course: {student[3]}", bg="#f0f0f0").pack(pady=5)
+            tk.Label(details_window, text=f"Phone: {student[4]}", bg="#f0f0f0").pack(pady=5)

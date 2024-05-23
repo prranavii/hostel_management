@@ -5,6 +5,9 @@ from tkinter import messagebox
 from add_student_window import AddStudentWindow
 from view_student import ViewStudentWindow
 from allocate_room import AllotRoomWindow
+from view_room import ViewRoomWindow
+from deallot_room_window import DeallotRoomWindow
+from add_room_window import AddRoomWindow
 class MainApp:
     def __init__( self, root):
         self.root = root
@@ -39,15 +42,15 @@ class MainApp:
         ViewStudentWindow(self.root)
         
     def add_room(self):
-        messagebox.showinfo("Info", "Add Room functionality")
+        AddRoomWindow(self.root)
 
     def view_rooms(self):
-        messagebox.showinfo("Info", "View Rooms functionality")
+        ViewRoomWindow(self.root)
 
     def allocate_room(self):
        AllotRoomWindow(self.root)
     def deallocate_room(self):
-        messagebox.showinfo("Info", "Deallocate Room functionality")
+        DeallotRoomWindow(self.root)
 
     def exit_app(self):
         self.root.destroy()

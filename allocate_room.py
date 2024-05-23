@@ -28,6 +28,10 @@ class AllotRoomWindow:
             res = allot_room(phone,room)
             if res==0:
                 messagebox.showwarning("Error", "No student found")
+            elif res=='noroom':
+                messagebox.showwarning("Error", "No room found")
+            elif res=='full':
+                messagebox.showwarning("Error", "Room is full")
             elif res:
                 messagebox.showinfo("Success", "Student Allotted successfully")
             else:
